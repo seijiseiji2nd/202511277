@@ -1,0 +1,186 @@
+@charset "UTF-8"; /* 文字コード指定 */
+@import url(reset.css); /* リセットCSS読込 */
+
+/* ================================
+   COMMON 共通設定
+================================ */
+
+* {
+  box-sizing: border-box; /* パディングと枠を含めて幅計算 */
+}
+
+body {
+  line-height: 1.8; /* 行間 */
+  font-family: 'Sawarabi Mincho', sans-serif; /* フォント設定 */
+  font-size: 16px; /* 本文の文字サイズ */
+  letter-spacing: .2em; /* 文字間隔 */
+  background: #f9f0e7; /* 背景色 */
+}
+
+a {
+  color: inherit; /* 親の文字色を継承 */
+}
+
+a:hover {
+  color: inherit; /* ホバーしても色を変えない */
+  text-decoration: none; /* 下線削除 */
+}
+
+img {
+  max-width: 100%; /* 画像が枠をはみ出ない */
+}
+
+/* ================================
+   #main-visual
+================================ */
+
+#main-visual {
+  width: 100%; /* 横幅100% */
+  height: 100vh; /* 全画面高さ */
+  background: url(../images/autumn.jpg) center/cover no-repeat; /* 背景画像の設定 */
+}
+
+#main-visual .inner {
+  margin-top: auto; /* 上余白自動 */
+  margin-bottom: 0; /* 下余白0 */
+  color: #fff; /* 文字色白 */
+}
+
+#main-visual > section {
+  margin: 0; /* 余白なし */
+}
+
+#main-visual + section .inner {
+  margin-top: 0; /* 上余白0 */
+}
+
+/* ================================
+   section
+================================ */
+
+section + section {
+  margin-top: 160px; /* 上に160pxの間隔 */
+}
+
+.bg {
+  display: flex; /* 横並び配置 */
+  flex-wrap: wrap; /* 折り返し有効 */
+}
+
+.bg img {
+  width: calc((750px + (100% - 750px) / 2)); /* 指定幅計算（※px変換対象外） */
+  margin-bottom: 80px; /* 下余白80px */
+}
+
+/* 左右切替 */
+.bg.right img {
+  margin-left: auto; /* 右寄せ */
+}
+
+.bg.left img {
+  margin-right: auto; /* 左寄せ */
+}
+
+.inner {
+  width: 750px; /* 横幅750px */
+  margin: auto; /* 中央寄せ */
+}
+
+h2 {
+  font-size: 30px; /* タイトル文字サイズ */
+  margin-bottom: 10px; /* 下余白10px */
+}
+
+h2 span {
+  display: block; /* ブロック化 */
+  color: #546e7a; /* 色設定 */
+  font-family: 'Tangerine', cursive; /* 装飾フォント */
+  font-weight: normal; /* 太さ標準 */
+  margin-top: 2px; /* 上余白2px */
+}
+
+.author {
+  font-size: 15px; /* 著者名の文字サイズ */
+}
+
+.profile {
+  margin: 0 0 12px; /* 下余白12px */
+}
+
+p {
+  line-height: 2.0; /* 行間広め */
+}
+
+p + p {
+  margin-top: 15px; /* 段落間の余白15px */
+}
+
+/* ================================
+   .slide-in
+================================ */
+
+.slide-in {
+  width: 100%; /* 横幅100% */
+  height: 400px; /* 高さ400px */
+  margin-top: 100px; /* 上余白100px */
+  background: linear-gradient(90deg, black 50%, white 100%); /* グラデ背景 */
+  color: #fff; /* 文字色白 */
+  transform: translateX(-100%); /* 左側に隠す初期位置 */
+  opacity: 0; /* 透明にして非表示 */
+  position: relative; /* 相対位置 */
+  display: flex; /* 横並び */
+  align-items: center; /* 縦中央寄せ */
+  font-size: 40px; /* 文字サイズ40px */
+  padding-left: 80px; /* 内側左余白80px */
+  transition: all .6s; /* アニメーション時間 */
+}
+
+.slide-in .more {
+  position: absolute; /* 絶対配置 */
+  bottom: 50px; /* 下から50px */
+  left: 80px; /* 左から80px */
+  padding: 10px; /* 内側余白 */
+  border: 2px solid #fff; /* 白枠線 */
+  font-size: 14px; /* 文字サイズ14px */
+  transition: all .6s; /* アニメーション時間 */
+}
+
+.slide-in img {
+  position: absolute; /* 絶対配置 */
+  right: 0; /* 右寄せ */
+  margin: auto; /* 自動余白 */
+  width: auto; /* 横自動 */
+  height: 400px; /* 縦400px */
+  mix-blend-mode: darken; /* なじませブレンド */
+}
+
+/* 表示時の動き */
+.slide-in.show {
+  transform: translateX(0); /* 左→0位置へ移動 */
+  opacity: 1; /* 不透明に */
+}
+
+.slide-in.show:hover {
+  opacity: .8; /* ホバーで薄く */
+}
+
+.slide-in.show:hover .more {
+  background: #fff; /* 背景白 */
+  color: #231815; /* 文字色変更 */
+}
+
+/* ================================
+   footer
+================================ */
+
+footer {
+  width: 100%; /* 横幅100% */
+  background: #fcc8c5; /* 背景色ピンク */
+  text-align: center; /* 中央揃え */
+  padding: 10px 0; /* 上下余白10px */
+}
+
+footer small {
+  display: block; /* ブロック化 */
+  padding: 10px 0; /* 上下余白10px */
+}
